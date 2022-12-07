@@ -1,8 +1,8 @@
-import { Text,FlatList,Dimensions,Animated,SafeAreaView, Image ,StyleSheet, View} from 'react-native'
+import { Text,Dimensions,Animated,SafeAreaView, Image ,StyleSheet, View} from 'react-native'
 import React , {useEffect} from 'react'
 import { useDispatch ,useSelector } from 'react-redux'
-import hotelsActions from './redux/actions/hotelsAction'
-import citiesActions from './redux/actions/citiesActions'
+import hotelsActions from '../redux/actions/hotelsAction'
+import citiesActions from '../redux/actions/citiesActions'
 
     const width = Dimensions.get('window').width
     const card = width * 1;
