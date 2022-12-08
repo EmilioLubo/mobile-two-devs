@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, SafeAreaView} from 'react-native';
 import { Provider } from 'react-redux';
 import store from './src/redux/store'
-import Hotels from './src/Hotels';
+import Shows from './src/Shows';
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
       <StatusBar backgroundColor='#efe' />
       <Provider store={store}>
       
-        <Hotels/>
+        <Shows/>
       
       </Provider>
     </SafeAreaView>

@@ -2,9 +2,22 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import apiUrl from "../../url";
 
-const getShow = createAsyncThunk('getShow',async(id)=>{
+const getShowUser = createAsyncThunk('getShowUser',async(id)=>{
     try{
         let res = await axios.get(`${apiUrl}/shows?userID=${id}`)
+        return {
+            show: res.data.response
+        }
+    }catch (error) {
+        return{
+            error: 'Error'
+        }
+    }
+})
+
+const getShow = createAsyncThunk('getShow',async()=>{
+    try{
+        let res = await axios.get(`${apiUrl}/shows`)
         return {
             show: res.data.response
         }
@@ -57,10 +70,11 @@ const createShow = createAsyncThunk('createShow',async(datos)=>{
 })
 
 const showsActions = {
-    getShow,
+    getShowUser,
     deleteShow,
     createShow,
-    getShowH
+    getShowH,
+    getShow
 }
 
 export default showsActions
