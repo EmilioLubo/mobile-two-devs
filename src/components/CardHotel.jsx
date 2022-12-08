@@ -1,6 +1,6 @@
 import { View , Text ,Image ,Button,Modal} from 'react-native'
 import React,{useState,useEffect} from 'react'
-import CardDetail from './CardDetail'
+import CardDetail from '../screens/CardDetail'
 
 
 

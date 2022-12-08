@@ -1,8 +1,8 @@
 import { View, Text , ScrollView} from 'react-native'
 import React,{useState,useEffect} from 'react'
-import showsActions from './redux/actions/showAction'
+import showsActions from '../redux/actions/showAction'
 import { useDispatch, useSelector } from 'react-redux'
-import CardShow from './CardShow'
+import CardShow from '../components/CardShow'
 
 
 export default function Shows() {
@@ -18,7 +18,7 @@ useEffect(()=>{
 
 
   return (
-    <View style={{paddingTop:50}}>
+    <View>
       <Text style={{fontSize:50,textAlign:'center'}}>Shows</Text>
       <ScrollView showsVerticalScrollIndicator={false} style={{width:370}}>
         {

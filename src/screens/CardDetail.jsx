@@ -1,6 +1,6 @@
 import { View, Text , Image , Button , Modal,FlatList} from 'react-native'
 import React , {useState,useEffect} from 'react'
-import showsActions from './redux/actions/showAction'
+import showsActions from '../redux/actions/showAction'
 import { useDispatch, useSelector } from 'react-redux'
 
 
