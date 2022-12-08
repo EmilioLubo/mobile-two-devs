@@ -20,6 +20,8 @@ export default function SignIn({navigation}) {
 
     let submit = ()=>{
         dispatch(signIn(dato))
+        setEmail('')
+        setPass('')
         Alert.alert('succesful')
         navigation.navigate('Home')
     }
