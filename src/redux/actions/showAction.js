@@ -15,6 +15,19 @@ const getShow = createAsyncThunk('getShow',async(id)=>{
     }
 })
 
+const getShowH = createAsyncThunk('getShowH',async(id)=>{
+    try{
+        let res = await axios.get(`${apiUrl}/shows?hotelID=${id}`)
+        return {
+            show: res.data.response
+        }
+    }catch (error) {
+        return{
+            error: 'Error'
+        }
+    }
+})
+
 const deleteShow = createAsyncThunk('deleteShow',async(datos)=>{
     let id = datos.id
     let token = datos.headers
@@ -46,7 +59,8 @@ const createShow = createAsyncThunk('createShow',async(datos)=>{
 const showsActions = {
     getShow,
     deleteShow,
-    createShow
+    createShow,
+    getShowH
 }
 
 export default showsActions
