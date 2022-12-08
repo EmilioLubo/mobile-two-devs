@@ -35,7 +35,7 @@ let clic = ()=>{
   <Picker.Item label="Order" value="" />
   <Picker.Item label="Asc" value="1" />
   <Picker.Item label="Desc" value="-1" />
-</Picker>
+  </Picker>
     <Button title='Search' onPress={clic}></Button>
     {
       hotels.length > 0 ? <Text style={{textAlign:'center',fontSize:20}}>found {hotels.length} Hotels</Text> : ''
