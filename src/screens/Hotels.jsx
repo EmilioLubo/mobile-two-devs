@@ -1,8 +1,8 @@
-import { View, Text ,ScrollView,TextInput,Button} from 'react-native'
+import { Text ,ScrollView,TextInput,Button} from 'react-native'
 import React , {useEffect , useState} from 'react'
-import CardHotel from './CardHotel'
+import CardHotel from '../components/CardHotel'
 import { useDispatch, useSelector } from 'react-redux'
-import hotelsActions from './redux/actions/hotelsAction'
+import hotelsActions from '../redux/actions/hotelsAction'
 import {Picker} from '@react-native-picker/picker';
 
 
@@ -24,7 +24,7 @@ let clic = ()=>{
     dispatch(getHotelByFilter(dato))
 }
   return (
-    <View style={{paddingTop:50}}>
+    <ScrollView>
     <Text style={{fontSize:50,textAlign:'center'}}>Hotels</Text>
     <TextInput placeholder='search...' style={{backgroundColor:'#fff',borderRadius:20,padding:10}} value={search} onChangeText={(item)=>{setSearch(item); dispatch(getHotelsByName(item))}}  ></TextInput>
     <Picker style={{backgroundColor:'#fff',margin:10}}
@@ -48,6 +48,6 @@ let clic = ()=>{
     }
     </ScrollView>
     
-    </View>
+    </ScrollView>
   )
 }

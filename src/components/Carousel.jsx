@@ -55,10 +55,8 @@ let data = hotel.concat(city)
 }
 const styles = StyleSheet.create({
     container: {
-        alignItems:'center',
-      flex:2,
+      alignItems:'center',
       justifyContent: 'center',
-      marginTop:50,
       backgroundColor:'#afa'
     },
     posterImage: {
