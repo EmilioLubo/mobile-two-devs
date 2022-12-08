@@ -9,7 +9,7 @@ import axios from 'axios'
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 
-export default function Cities() {
+export default function Cities({navigation}) {
 
     let [checkCities, setCheckCities] = useState([])
     let {cities} = useSelector(state => state.citiesReducer)
@@ -54,7 +54,7 @@ export default function Cities() {
             {checkCities.length > 0 ?
             Array.from(new Set(checkCities.map(city => city.continent))).map(el => {
                 return (
-                    <BouncyCheckbox fillColor='blue' style={{padding: 10}} text={el} textStyle={{fontSize: 20, textDecorationLine: "none",}} isChecked={filter.continent.includes(el) ? true : false} onPress={(isChecked) => {
+                    <BouncyCheckbox key={el} fillColor='blue' style={{padding: 10}} text={el} textStyle={{fontSize: 20, textDecorationLine: "none",}} isChecked={filter.continent.includes(el) ? true : false} onPress={(isChecked) => {
                         let auxArray = [...filter.continent]
                         if(isChecked){
                             auxArray.push(el)
@@ -74,7 +74,7 @@ export default function Cities() {
         }
         {cities.length > 0 ?
         <FlatList data={cities} keyExtractor={(item) => item._id} renderItem={({item}) => 
-            <CardCity name={item.name} photo={item.photo} population={item.population}/>
+            <CardCity navigation={navigation} id={item._id} name={item.name} photo={item.photo} population={item.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}/>
         } ListFooterComponent={<></>}/>:<Text style={{fontSize:40,textAlign:'center'}}>No matches in your search</Text>
       }
     </SafeAreaView>
