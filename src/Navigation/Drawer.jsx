@@ -7,10 +7,14 @@ import Shows from '../screens/Shows'
 import SignIn from '../screens/SignIn'
 import Itineraries from '../screens/Itineraries'
 import SignUp from '../screens/SignUp'
+import Profile from '../screens/Profile'
+import { useSelector } from 'react-redux'
 
 const DrawerNav = createDrawerNavigator()
 
 export default function Drawer(){
+
+    let {id, logged} = useSelector(state => state.userReducer)
 
     return (
         <DrawerNav.Navigator name='root'>
@@ -22,6 +26,10 @@ export default function Drawer(){
             <DrawerNav.Screen name='SignIn' component={SignIn}/>
             <DrawerNav.Screen options={{drawerItemStyle: {display: 'none'}}} name='Itineraries' initialParams={{id: ''}} component={Itineraries}/>
             <DrawerNav.Screen name='SignUp' component={SignUp}/>
+            {logged ?
+                <DrawerNav.Screen name='Profile' initialParams={{id: id}} component={Profile}/> :
+                <></>
+            }
         </DrawerNav.Navigator>
     )
 }
