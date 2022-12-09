@@ -9,6 +9,7 @@ import Itineraries from '../screens/Itineraries'
 import SignUp from '../screens/SignUp'
 import Profile from '../screens/Profile'
 import { useSelector } from 'react-redux'
+import MyReactions from '../screens/MyReactions'
 
 const DrawerNav = createDrawerNavigator()
 
@@ -27,7 +28,11 @@ export default function Drawer(){
             <DrawerNav.Screen options={{drawerItemStyle: {display: 'none'}}} name='Itineraries' initialParams={{id: ''}} component={Itineraries}/>
             <DrawerNav.Screen name='SignUp' component={SignUp}/>
             {logged ?
-                <DrawerNav.Screen name='Profile' initialParams={{id: id}} component={Profile}/> :
+                (<>
+                <DrawerNav.Screen name='Profile' initialParams={{id: id}} component={Profile}/>
+                <DrawerNav.Screen name='MyReactions' component={MyReactions}/>
+                </>
+                ) :
                 <></>
             }
         </DrawerNav.Navigator>
