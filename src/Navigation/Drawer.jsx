@@ -6,10 +6,12 @@ import City from '../screens/City'
 import Shows from '../screens/Shows'
 import SignIn from '../screens/SignIn'
 import Itineraries from '../screens/Itineraries'
+import SignUp from '../screens/SignUp'
 
 const DrawerNav = createDrawerNavigator()
 
 export default function Drawer(){
+
     return (
         <DrawerNav.Navigator name='root'>
             <DrawerNav.Screen name='Home' component={Home}/>
@@ -17,8 +19,9 @@ export default function Drawer(){
             <DrawerNav.Screen name='Hotels' component={Hotels}/>
             <DrawerNav.Screen options={{drawerItemStyle: {display: 'none'}}} name='City' initialParams={{id: ''}} component={City}/>
             <DrawerNav.Screen name='Shows' component={Shows}/>
-            <DrawerNav.Screen name='Sign In' component={SignIn}/>
+            <DrawerNav.Screen name='SignIn' component={SignIn}/>
             <DrawerNav.Screen options={{drawerItemStyle: {display: 'none'}}} name='Itineraries' initialParams={{id: ''}} component={Itineraries}/>
+            <DrawerNav.Screen name='SignUp' component={SignUp}/>
         </DrawerNav.Navigator>
     )
 }
