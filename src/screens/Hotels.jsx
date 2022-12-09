@@ -24,8 +24,10 @@ let clic = ()=>{
     dispatch(getHotelByFilter(dato))
 }
   return (
-    <View>
-    <Text style={{fontSize:50,textAlign:'center'}}>Hotels</Text>
+    <View style={{marginBottom:270}}>
+    <Text style={{fontSize:45
+    
+    ,textAlign:'center'}}>Hotels</Text>
     <TextInput placeholder='search...' style={{backgroundColor:'#fff',borderRadius:20,padding:10}} value={search} onChangeText={(item)=>{setSearch(item); dispatch(getHotelsByName(item))}}  ></TextInput>
     <Picker style={{backgroundColor:'#fff',margin:10}}
   selectedValue={order}

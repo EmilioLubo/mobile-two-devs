@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux'
 export default function CardDetail({id, name , photo , capacity}) {
     let [open , setOpen] = useState(false)
     let dispatch = useDispatch()
-  let {show} = useSelector(store=>store.showsReducer)
+  let {showH} = useSelector(store=>store.showsReducer)
   let {getShowH} = showsActions
 
   useEffect(()=>{
@@ -21,7 +21,7 @@ export default function CardDetail({id, name , photo , capacity}) {
       <Text style={{textAlign:'center'}} >Capacity: {capacity}</Text>
       <Button title='view shows' onPress={()=>setOpen(true)} ></Button>
         <Modal visible={open}>
-            <FlatList data={show} keyExtractor={(item)=>item._id} renderItem={({item})=>{
+            <FlatList data={showH} keyExtractor={(item)=>item._id} renderItem={({item})=>{
                 return(
                     <View style={{backgroundColor:'#ffa',padding:20,margin:15}}>
                         <Text style={{textAlign:'center',fontSize:25,fontWeight:'500'}}>{item.name}</Text>

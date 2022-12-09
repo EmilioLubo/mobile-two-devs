@@ -18,12 +18,12 @@ useEffect(()=>{
 
 
   return (
-    <View>
+    <View style={{marginBottom:80}}>
       <Text style={{fontSize:50,textAlign:'center'}}>Shows</Text>
-      <ScrollView showsVerticalScrollIndicator={false} style={{width:370}}>
+      <ScrollView showsVerticalScrollIndicator={false} style={{width:400}}>
         {
         show.length > 0 ?
-        show.map(item=> <CardShow id={item._id} name={item.name} photo={item.photo} key={item._id} description={item.description} date={item.date} price={item.price} />)
+        show.map(item=> <CardShow idS={item._id} name={item.name} photo={item.photo} key={item._id} description={item.description} date={item.date} price={item.price} />)
         : <Text style={{textAlign:'center',fontSize:20}}> shows not found </Text>
     }
     </ScrollView>

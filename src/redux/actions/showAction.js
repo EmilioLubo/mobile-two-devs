@@ -32,7 +32,7 @@ const getShowH = createAsyncThunk('getShowH',async(id)=>{
     try{
         let res = await axios.get(`${apiUrl}/shows?hotelID=${id}`)
         return {
-            show: res.data.response
+            showH: res.data.response
         }
     }catch (error) {
         return{
