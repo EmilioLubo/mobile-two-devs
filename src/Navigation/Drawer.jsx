@@ -98,6 +98,10 @@ const MenuItems = ({navigation})=>{
                 <Image source={require('../../assets/happy-alt-regular-60.png')} style={{width:30,height:30}}/>
                 <Text style={{marginLeft:10,fontSize:15,fontFamily: 'monospace'}}>My Reactions</Text>
             </TouchableOpacity>
+                <TouchableOpacity onPress={()=>navigation.navigate('SignOut')} style={{flexDirection:'row',alignItems:'center',padding:10,backgroundColor:'#eee',margin:10,borderRadius:25}}>
+                <Image source={require('../../assets/log-out-regular-60.png')} style={{width:30,height:30}}/>
+                <Text style={{marginLeft:10,fontSize:15,fontFamily: 'monospace'}}>Sign Out</Text>
+            </TouchableOpacity>
                 </>
                 ) :
                 <></>
