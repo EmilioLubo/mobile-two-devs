@@ -23,7 +23,7 @@ export default function CardUserReactions({itId, photo, itName, rName, reload}) 
         if(rName === 'love'){
             setColor('indianred')
         }
-    })
+    }, [])
 
     let deleteHandler = () =>{
         dispatch(deleteReaction({token, itId}))

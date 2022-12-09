@@ -39,7 +39,7 @@ let data = hotel.concat(city)
                 <Animated.View style={{ marginHorizontal: space,
                                     padding: 40,
                                     borderRadius: 25,
-                                    backgroundColor: 'lightskyblue',
+                                    backgroundColor: 'goldenrod',
                                     alignItems: 'center',
                                     transform: [{translateY:scrollY}],
                                     marginTop:60,
@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     container: {
       alignItems:'center',
       justifyContent: 'center',
-      backgroundColor:'lavenderblush'
     },
     posterImage: {
         width: 300,
@@ -67,7 +66,6 @@ const styles = StyleSheet.create({
         borderRadius: 24,
         margin:0,
         marginBottom: 10,
-        backgroundColor:'khaki'
     },
   });
   
