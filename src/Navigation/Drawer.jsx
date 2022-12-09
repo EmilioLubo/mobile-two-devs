@@ -55,13 +55,8 @@ const MenuItems = ({navigation})=>{
                 <TouchableOpacity onPress={()=>navigation.navigate('Profile')} style={{flexDirection:'row',alignItems:'center',padding:10,backgroundColor:'#eee',margin:10,borderRadius:25}}>
                 
                 <Image source={{uri:photo}} style={{width:35,height:35,borderRadius:50}}/>
-                <Text style={{paddingLeft:20}}>
-                <Text style={{marginLeft:10,fontSize:15,fontFamily: 'monospace',fontWeight:'800'}}>{name}         </Text>
-                <Text style={{marginLeft:10,fontSize:15,fontFamily: 'monospace',paddingLeft:40}}> My Profile</Text>
-                </Text>
-                    
-                
-                
+                <Text style={{marginLeft:10,fontSize:15,fontFamily: 'monospace',fontWeight:'800'}}>{name}  
+                <Text style={{marginLeft:10,fontSize:15,fontFamily: 'monospace',paddingLeft:40}}> My Profile</Text>       </Text> 
             </TouchableOpacity>
                 </>
                 ) :
