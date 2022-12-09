@@ -1,8 +1,9 @@
 import { FlatList, SafeAreaView, Text } from 'react-native'
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import reactionsActions from '../redux/actions/reactionsActions'
 import CardUserReactions from '../components/CardUserReactions'
+import { useFocusEffect } from '@react-navigation/native'
 
 export default function MyReactions() {
 
@@ -17,6 +18,14 @@ export default function MyReactions() {
             .then(res => setMyReactions(res.payload.reactions))
             .catch(err => console.log(err))
     }, [update])
+
+    useFocusEffect(
+        useCallback(() => {
+            dispatch(getMyReactions(id))
+                .then(res => setMyReactions(res.payload.reactions))
+                .catch(err => console.log(err))
+        }, [])
+   )
 
     let reload = () => {
         setUpdate(!update)
