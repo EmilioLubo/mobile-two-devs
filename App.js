@@ -7,7 +7,7 @@ import Drawer from './src/Navigation/Drawer';
 
 export default function App() {
   return (
-      <SafeAreaView style={{height: "100%"}}>
+      <SafeAreaView style={{flex:1}}>
         <NavigationContainer>
           <Provider store={store}>
             <Drawer/>

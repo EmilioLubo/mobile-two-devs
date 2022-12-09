@@ -3,6 +3,7 @@ import showsActions from "../actions/showAction";
 
 const initialState = {
     show: [],
+    showH:[],
     load:false,
     error:false
 }

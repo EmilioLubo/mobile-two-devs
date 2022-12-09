@@ -17,7 +17,7 @@ const getComent = createAsyncThunk('getComent',async(datos)=>{
 })
 
 const delComent = createAsyncThunk('delComent',async(datos)=>{
-    let id = datos.id
+    let id = datos.idSH
     let token = datos.headers
     try{
         let res = await axios.delete(`${apiUrl}/comments/${id}`,token)

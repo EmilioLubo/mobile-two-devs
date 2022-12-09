@@ -6,7 +6,7 @@ import citiesActions from '../redux/actions/citiesActions'
 
     const width = Dimensions.get('window').width
     const card = width * 1;
-    const space = 60;
+    const space = 55;
 
 export default function Carousel() {
  let dispatch = useDispatch()
@@ -43,6 +43,7 @@ let data = hotel.concat(city)
                                     alignItems: 'center',
                                     transform: [{translateY:scrollY}],
                                     marginTop:60,
+                                    height:350
                                    }} >
                 <Image source={{uri:photo}} style={styles.posterImage}  />
                 <Text style={{textAlign:'center'}} >{item.type +' '+ item.name}</Text>
