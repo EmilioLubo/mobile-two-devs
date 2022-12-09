@@ -11,6 +11,7 @@ import SignUp from '../screens/SignUp'
 import Profile from '../screens/Profile'
 import { useSelector } from 'react-redux'
 import MyReactions from '../screens/MyReactions'
+import SignOut from '../screens/SignOut'
 
 const DrawerNav = createDrawerNavigator()
 
@@ -33,6 +34,7 @@ export default function Drawer(){
                 (<>
                 <DrawerNav.Screen name='Profile' initialParams={{id: id}} component={Profile}/>
                 <DrawerNav.Screen name='MyReactions' component={MyReactions}/>
+                <DrawerNav.Screen name='SignOut' component={SignOut}/>
                 </>
                 ) :
                 <></>
