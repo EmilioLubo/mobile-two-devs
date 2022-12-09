@@ -1,12 +1,8 @@
 import { SafeAreaView, Text,ImageBackground,Image,StyleSheet } from 'react-native'
 import React from 'react'
 import Carousel from '../components/Carousel'
-import { useSelector } from 'react-redux'
-
 
 export default function Home() {
-
-  
 
   return (
     <SafeAreaView>

@@ -37,16 +37,16 @@ let data = hotel.concat(city)
         return (
             <View style={{width:width}} >
                 <Animated.View style={{ marginHorizontal: space,
-                                    padding: space,
+                                    padding: 40,
                                     borderRadius: 25,
-                                    backgroundColor: '#ba1',
+                                    backgroundColor: 'lightskyblue',
                                     alignItems: 'center',
                                     transform: [{translateY:scrollY}],
                                     marginTop:60,
                                     height:350
                                    }} >
                 <Image source={{uri:photo}} style={styles.posterImage}  />
-                <Text style={{textAlign:'center'}} >{item.type +' '+ item.name}</Text>
+                <Text style={{textAlign:'center', fontSize: 20, fontWeight:'900', fontFamily:'monospace'}} >{(item.type === 'Hotel' ? item.type : '') +' '+ item.name}</Text>
                 </Animated.View>
             </View>
         )
@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     container: {
       alignItems:'center',
       justifyContent: 'center',
-      backgroundColor:'#afa'
+      backgroundColor:'lavenderblush'
     },
     posterImage: {
         width: 300,
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
         borderRadius: 24,
         margin:0,
         marginBottom: 10,
-        backgroundColor:'#afa'
+        backgroundColor:'khaki'
     },
   });
   

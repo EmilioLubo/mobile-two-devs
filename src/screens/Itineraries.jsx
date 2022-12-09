@@ -20,7 +20,7 @@ export default function Itineraries() {
   return (
     <SafeAreaView style={{flex: 1}}>
         {itineraries.length > 0 ?
-        <FlatList data={itineraries} keyExtractor={item => item._id} renderItem={({item}) => <CardItinerary itId={id} name={item?.name} photo={item.photo} description={item.description} duration={item.duration} price={item.price}/>}/>:
+        <FlatList data={itineraries} keyExtractor={item => item._id} renderItem={({item}) => <CardItinerary itId={item._id} name={item?.name} photo={item.photo} description={item.description} duration={item.duration} price={item.price}/>}/>:
         <Text style={{fontSize:40,textAlign:'center'}}>No itineraries yet</Text>
         }
         <Button title='Go Back' onPress={() => navigation.navigate('City', {id: id})}></Button>
