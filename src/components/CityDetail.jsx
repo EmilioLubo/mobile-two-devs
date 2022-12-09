@@ -2,7 +2,7 @@ import { TouchableOpacity ,SafeAreaView, Text, ImageBackground, Dimensions, Butt
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
 
-export default function CityDetail({name, photo, continent, population}) {
+export default function CityDetail({id, name, photo, continent, population}) {
 
     let screenHeight = Dimensions.get('window').height
     let navigation = useNavigation()
@@ -13,10 +13,10 @@ export default function CityDetail({name, photo, continent, population}) {
             <Text style={styles.title}>{name}</Text>
             <Text style={styles.text}>Continent: {continent}</Text>
             <Text style={styles.text}>Population: {population?.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</Text>
-            <TouchableOpacity style={styles.button} onPress={() => navigation} >
-                <Text style={{color: 'floralwhite'}}>VIEW SHOWS</Text>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Itineraries', {id: id})} >
+                <Text style={{color: 'floralwhite'}}>VIEW ITINERARIES</Text>
             </TouchableOpacity>
-            <Button style={{position: 'absolute', bottom: -100}} title='Go back' onPress={() => navigation?.navigate('Cities', null)} ></Button>
+            <Button style={{position: 'absolute', bottom: -100}} title='Go back' onPress={() => navigation.navigate('Cities', null)} ></Button>
         </ImageBackground>
     </SafeAreaView>
   )
@@ -40,6 +40,6 @@ const styles = StyleSheet.create({
         padding: 10,
         margin: 80,
         backgroundColor: `dodgerblue`,
-        borderRadius: 50
+        borderRadius: 50,
     }
 })

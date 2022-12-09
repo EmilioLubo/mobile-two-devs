@@ -2,6 +2,7 @@ import { View, Text, TextInput, TouchableOpacity, FlatList, Image,Alert } from "
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import commentActions from "../redux/actions/commentAction";
+import { ifError } from "assert";
 
 export default function Comments({ show, itin }) {
     let [coment, setComent] = useState("");
@@ -26,7 +27,13 @@ export default function Comments({ show, itin }) {
     show ? (datos.showID = show) : (datos.itinerarieID = itin);
 
     let submit = () => {
-        dispatch(createComent(datos));
+        dispatch(createComent(datos))
+        .then(res => {
+            if(res.payload.error){
+                Alert.alert('Log in or Sign up please')
+            }
+        })
+        .catch(err => console.log(err));
         setComent("");
         dispatch(getComent(req));
     };
@@ -34,7 +41,14 @@ export default function Comments({ show, itin }) {
     let edit = ()=>{
         let headers = {headers: {'Authorization': `Bearer ${token}`}}
         dispatch(editComent({userID:id,comment:edite,id:idd,headers}))
-        Alert.alert('was edited')
+        .then(res => {
+            if(res.payload.error){
+                Alert.alert('unauthorized action')
+            } else{
+                Alert.alert('was edited')
+            }
+        })
+        .catch(err => console.log(err))
         setPush(false)
         setEdite('')
         dispatch(getComent(req))
@@ -66,7 +80,17 @@ export default function Comments({ show, itin }) {
                                     <TouchableOpacity onPress={()=>{setPush(!push);setIdd(item._id);setEdite(item.comment)}}>
                                         <Text style={{backgroundColor:'#ccc',padding:2,margin:3,textAlign:'center',fontSize:11}}>Edit</Text>
                                     </TouchableOpacity>
-                                    <TouchableOpacity onPress={()=>{dispatch(delComent(dato));Alert.alert('was deleted')}} >
+                                    <TouchableOpacity onPress={()=>{
+                                        dispatch(delComent(dato))
+                                        .then(res => {
+                                            if(res.payload.error){
+                                                Alert.alert('unauthorized action')
+                                            } else{
+                                                Alert.alert('was deleted')
+                                            }
+                                        })
+                                        .catch(err => console.log(err))
+                                        }} >
                                         <Text style={{backgroundColor:'#ccc',padding:2,margin:3,textAlign:'center',fontSize:11}}>Delete</Text>
                                     </TouchableOpacity>
                                 </View>

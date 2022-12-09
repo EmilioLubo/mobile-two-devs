@@ -19,7 +19,7 @@ export default function City() {
     return (
       <View>
         {city ?
-        <CityDetail name={city.name} photo={city.photo} continent={city.continent} population={city.population}/> :
+        <CityDetail id={city._id} name={city.name} photo={city.photo} continent={city.continent} population={city.population}/> :
         <Text>There's no city</Text>}
       </View>
     )
