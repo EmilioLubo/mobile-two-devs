@@ -45,7 +45,7 @@ let clic = ()=>{
     <ScrollView showsVerticalScrollIndicator={false} style={{width:370}}>
         {
         hotels.length > 0 ?
-        hotels.map(item=> <CardHotel id={item._id} name={item.name} photo={item.photo[0]} key={item._id} capacity={item.capacity} />)
+        hotels.map(item=> <CardHotel id={item._id} name={item.name} city={item.cityID.name} photo={item.photo[0]} key={item._id} capacity={item.capacity} />)
         : <Text style={{textAlign:'center',fontSize:20}}> Hotels not found </Text>
     }
     </ScrollView>

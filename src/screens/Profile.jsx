@@ -20,10 +20,10 @@ export default function Profile() {
     }, [])
 
   return (
-    <View>
+    <View >
       <Text style={{fontSize:50, fontFamily: 'monospace', fontWeight: '800', textAlign: 'center', margin:10, textDecorationLine: 'underline'}}>My Profile</Text>
-      <CardProfile name={user?.name} age={user?.age} photo={user?.photo} email={user?.email} role={user?.role}/>
-      <Button title='GO TO HOMEPAGE' onPress={() => navigation.navigate('Home')}></Button>
+      <CardProfile name={user?.name} age={user?.age} photo={user?.photo} email={user?.email} role={user?.role} id={user?._id}/>
+      <Button  title='GO TO HOMEPAGE' onPress={() => navigation.navigate('Home')}></Button>
     </View>
   )
 }
