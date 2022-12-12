@@ -1,5 +1,6 @@
 import { createReducer } from "@reduxjs/toolkit";
 import userActions from "../actions/userAction";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const initialState = {
     photo:'',
@@ -25,7 +26,7 @@ const userReducer = createReducer(initialState,(item)=>{
             const {success,response} = action.payload
             if (success){
                 let {user,token} = response.response
-                localStorage.setItem('token',JSON.stringify({token:{
+                AsyncStorage.setItem('token',JSON.stringify({token:{
                     user:token
                 }}))
                 let newState = {
@@ -103,7 +104,7 @@ const userReducer = createReducer(initialState,(item)=>{
         .addCase(userActions.signOut.fulfilled, (state, action) => {
             const {success,response} = action.payload
             if(success){
-                localStorage.removeItem('token')
+                AsyncStorage.removeItem('token')
                 let newState = {
                     ...state,
                     id:'',

@@ -9,7 +9,7 @@ import userReducer from "./reducers/userReducer"
 import profileReducer from "./reducers/profileReducer";
 import comentReducer from "./reducers/commentReducer";
 
-export const store = configureStore({
+const store = configureStore({
     reducer:{
                 hotelReducer,
                 citiesReducer,
@@ -22,3 +22,5 @@ export const store = configureStore({
                 comentReducer
             }
 })
+
+export default store

@@ -1,20 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import { SafeAreaView } from 'react-native';
+import { Provider, useDispatch, useSelector } from 'react-redux';
+import store from './src/redux/store'
+import { NavigationContainer } from '@react-navigation/native';
+import Drawer from './src/Navigation/Drawer';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Como estas?</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  return (
+      <SafeAreaView style={{flex:1}}>
+        <NavigationContainer>
+          <Provider store={store}>
+            <Drawer/>
+          </Provider>
+        </NavigationContainer>
+      </SafeAreaView>
+  )
+}
